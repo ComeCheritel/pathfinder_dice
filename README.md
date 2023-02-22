@@ -7,8 +7,8 @@ Choses importantes à signaler :
 - besoin d'un cluster de calcul (temps de calculs pouvant être très long)
 - ordres des codes
 - Gams capricieux : parfois, il faut commenter et bien choisir le guess de départ qui doit être le plus proche possible de ce qui est utilisé
-- description du solver utilisé - CONOPT4 (https://www.gams.com/latest/docs/S_CONOPT4.html)
-- parler de pathfinder ([lien vers le repo est le papier](https://github.com/tgasser/Pathfinder))
+- description du solver utilisé [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
+- parler de pathfinder ([lien vers le repo](https://github.com/tgasser/Pathfinder) et [le papier](https://gmd.copernicus.org/articles/15/8831/2022/))
 
 # Description
 
@@ -33,36 +33,26 @@ Furthermore note that running the simulation codes is extremely computationnally
 
 The folders in this repository are broadly consistent with the steps outlined above:
 
-0_data_cleaning/ - Code for cleaning and constructing the dataset used to estimate the mortality-temperature relationship.
+0_input_data/ - The several spreadsheets required to run the simulations.
 
-1_estimation/ - Code for estimating and plotting all mortality-temperature regression models present in the paper.
+1_simulation/ - Code for estimating robust cost-benefit and cost-effective pathways.
 
-2_projection/ - Code for running future projections using Climate Impact Lab projection tools, and extracting, summarizing, and plotting the projection output.
+2_results/ - Excel spreadsheets containing the results of the GAMS simulation.
 
-3_valuation/ - Code for calculating the VSL based on various assumptions and applying those values to our projected impacts of climate change on mortality risk.
 
-4_damage_function/ - Code for estimating empirical damage functions based upon monetized damages and GMST anomalies.
+## Known issues
 
-5_scc/ - Code for applying a CO2 pulse from the FAIR simple climate model to global damage functions, and summing damages over time to calculate mortality partial SCCs.
+    GAMS is a capricious software. Sometimes, with a given set of parameters, a model will be "infeasible", i.e. the feasibility step in the optimisation will not converge (the solver does not find a feasible solution from which to start the optimization). In this case, it may be relevant to exchange the rows of some states of the world with each other in the Excel input files (be careful to exchange the rows identically in the four input files, otherwise you change the underlying distribution of states of the world). More details in the following sections.
 
-For run instructions on each step of the analysis, refer to the README files located within the corresponding directories.
+
+# Setup Instructions
+
 Setup
 Requirements For Using Code In This Repo
 
     You need to have GAMS and a GAMS licence to .
 
     We use conda to manage python environments, so we recommend installing conda if you haven't already done so following these instructions.
-
-## Known issues
-
-    The model requires a high number of substeps to remain stable under high CO2 (because of the ocean carbon cycle). This can be set using the nt argument when calling run_xarray.
-
-    The temperature-driven mode (Tdriven) is extremely sensitive to its forcings: it can be very difficult to make it transition smoothly from historical to projections. This is unavoidable because mathematically it requires the second derivative of T and the first derivative of ERFx as input.
-
-    Unclear whether the my_AR1 class from cls_calib is actually needed.
-
-
-# Setup Instructions
 
     Clone the following repos to a chosen directory, which we'll call yourREPO from now onwards, with the following commands:
 
