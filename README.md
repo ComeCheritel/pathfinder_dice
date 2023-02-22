@@ -47,13 +47,9 @@ GAMS is a capricious software. Sometimes, with a given set of parameters, a mode
 
 Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
-2. comment on model simulations with probabilistic targets previous to the code under consideration using the `$ontext' and `$offtext' command lines
-3. load the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
-
-De la même manière, si le guess au départ n'est pas assez proche du résultat, il se peut que le modèle ne parvienne pas à trouver de solution feasible. C'est en particulier ce qui arrive dans le cas de certaines simulations cost-effective lors du passage d'une cible probabilisée à une autre. Dans ce cas, le plus simple est:
-1. de déterminer quelle simulation dont les résultats sont déjà obtenus apparait comme la plus proche de celle recherchée
-2. de commenter les simuations de modèle avec des cibles probabilistes prcédentes du code considéré en utilisant les lisges de commande `$ontext` et `$offtext`
-3. de charger le fichier `resultsxxx.gdx` correspondant au résultat de simulation selectionnné en **1.** aux lignes du code `$gdxin resultsxxx.gdx` et `execute_loadpoint "resultsxxx.gdx"  ;`
+2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
+3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
+4. rerun the code and wait to see if the new guess results leads to a feasible solution
 
 # How-to
 
