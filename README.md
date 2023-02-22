@@ -45,6 +45,10 @@ The folders in this repository are broadly consistent with the steps outlined ab
 
 GAMS is a capricious software. Sometimes, with a given set of parameters, a model will be "infeasible", i.e. the feasibility step in the optimisation will not converge (the solver does not find a feasible solution from which to start the optimization). In this case, it may be relevant to exchange the rows of some states of the world with each other in the Excel input files (be careful to exchange the rows identically in the four input files, otherwise you change the underlying distribution of states of the world). More details in the following sections.
 
+De la même manière, si le guess au départ n'est pas assez proche du résultat, il se peut que le modèle ne parvienne pas à trouver de solution feasible. C'est en particulier ce qui arrive dans le cas de certaines simulations cost-effective lors du passage d'une cible probabilisée à une autre. Dans ce cas, le plus simple est:
+1. de déterminer quelle simulation dont les résultats sont déjà obtenus apparait comme la plus proche de celle recherchée
+2. de commenter les simuations de modèle avec des cibles probabilistes prcédentes du code considéré en utilisant les lisges de commande `$ontext` et `$offtext`
+3. de charger le fichier `resultsxxx.gdx` correspondant au résultat de simulation selectionnné en **1.** aux lignes du code `$gdxin resultsxxx.gdx` et `execute_loadpoint "resultsxxx.gdx"  ;`
 
 # How-to
 
@@ -65,6 +69,8 @@ This first file performs:
 - the cost-effective robust probabilistic simulations with a constraint limiting warming to 1.5 degrees,
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 2 degrees,
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees.
+
+Once this simulation has run
 
 # References
     
