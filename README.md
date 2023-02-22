@@ -99,7 +99,7 @@ Save and exit. Then, run source ~/.bash_profile to load the changes we just made
 # References
     
 The Pathfinder model is described in Bossy, T., Gasser, T., and Ciais, P.: Pathfinder v1.0.1: a Bayesian-inferred simple carbon–climate model to explore climate change scenarios, Geosci. Model Dev., 15, 8831–8868, https://doi.org/10.5194/gmd-15-8831-2022, 2022. 
-The repository of the code is available ([here](https://github.com/tgasser/Pathfinder).
+The repository of the code is available [here](https://github.com/tgasser/Pathfinder).
 
 The GAMS solver used is a non-linear optimization solver named [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
     
