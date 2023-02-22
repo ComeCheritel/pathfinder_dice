@@ -11,7 +11,6 @@ Choses importantes à signaler :
 - parler de pathfinder ([lien vers le repo](https://github.com/tgasser/Pathfinder) et [le papier](https://gmd.copernicus.org/articles/15/8831/2022/))
 
 
-
 # Description
 
 
@@ -49,13 +48,15 @@ GAMS is a capricious software. Sometimes, with a given set of parameters, a mode
 
 # How-to
 
-Requirements For Using Code In This Repo
+Requirements for using the code in this repo
 
     You need to have GAMS as well as a GAMS licence too.
 
 ## Basic instruction
 
+First you should download the input data files (folder 0_input_data) and the simulation GAMS code files (folder 1_simulation) and put all files in the same folder.
 
+You may open the 
 
 cd <yourREPO>
 git clone https://github.com/ClimateImpactLab/carleton_mortality_2022.git
