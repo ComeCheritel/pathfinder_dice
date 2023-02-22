@@ -11,9 +11,18 @@ Choses importantes à signaler :
 
 # Description
 
+
+
 Ceci est le repository comprenant les codes ainsi que les résultats présentés dans le papier ... 
 
+## Structure
 
+Ce repository comprend les éléments permettant de reproduire les réusltats présentés dans Gasser et al. “Robust climate mitigation entails net negative emissions for centuries.”
+
+Ce repository comprend trois sections différentes :
+1. Données de départ issues du modèle pathfinder
+2. Codes des différents modèles de simulation robuste dont les résultats sont présentés
+3. Tableaux de réusltats sous forme de tableaux excel
 
 ## User suitability
 
