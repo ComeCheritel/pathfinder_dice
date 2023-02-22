@@ -7,24 +7,26 @@ Choses importantes à signaler :
 - besoin d'un cluster de calcul (temps de calculs pouvant être très long)
 - ordres des codes
 - Gams capricieux : parfois, il faut commenter et bien choisir le guess de départ qui doit être le plus proche possible de ce qui est utilisé
-- description du solver utilisé
+- description du solver utilisé (IPOPT)
+- parler de OSCAR (lien vers le repo est le papier
 
 # Description
 
 
-
-Ceci est le repository comprenant les codes ainsi que les résultats présentés dans le papier ... 
-
 ## Structure
 
-Ce repository comprend les éléments permettant de reproduire les réusltats présentés dans Gasser et al. “Robust climate mitigation entails net negative emissions for centuries.”
+This repository includes the elements to reproduce the results presented in Gasser et al. "Robust climate mitigation entails net negative emissions for centuries.
 
-Ce repository comprend trois sections différentes :
-1. Données de départ issues du modèle pathfinder
-2. Codes des différents modèles de simulation robuste dont les résultats sont présentés
-3. Tableaux de réusltats sous forme de tableaux excel
+This repository includes three different sections:
+1. **Input data** from the Pathfinder model
+2. **Codes** for the different robust simulation models whose results are presented
+3. **Results tables** in excel spreadsheet format
 
 ## User suitability
+
+Please note that the programming language used is GAMS (https://www.gams.com/). Since the size of the various models we run far exceeds the 1000 limit, a GAMS licence is required.
+
+Furthermore note that running the simulation codes is extremely computationnally intensive since the model consists of the optimisation of about 20 state variables over 100 periods in 600 different states of the world. The power requirement can only be granted by a computing cluster.
 
 Please note that the "Projection" step (step 2) is incredibly computationally intensive, as it computes a set of daily Monte Carlo simulations at the scale of 24,378 geospatial "impact regions". This step can only be feasibly calculated on a computing cluster or using cloud computing resources. Similarly, some components of the "Valuation" step (step 3) are computationally intensive to replicate, as they conduct calculations using all Monte Carlo simulation outputs from step 2.
 
