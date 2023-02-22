@@ -10,6 +10,8 @@ Choses importantes à signaler :
 - description du solver utilisé [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
 - parler de pathfinder ([lien vers le repo](https://github.com/tgasser/Pathfinder) et [le papier](https://gmd.copernicus.org/articles/15/8831/2022/))
 
+Bossy, T., Gasser, T., and Ciais, P.: Pathfinder v1.0.1: a Bayesian-inferred simple carbon–climate model to explore climate change scenarios, Geosci. Model Dev., 15, 8831–8868, https://doi.org/10.5194/gmd-15-8831-2022, 2022. 
+
 # Description
 
 
