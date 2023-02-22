@@ -25,7 +25,7 @@ This repository includes three different sections:
 
 ## User suitability
 
-Please note that the programming language used is 'GAMS' (https://www.gams.com/). Since the size of the various models we run far exceeds the 1000 limit, a GAMS licence is required.
+Please note that the programming language used is `GAMS` (https://www.gams.com/). Since the size of the various models we run far exceeds the 1000 limit, a GAMS licence is required.
 
 Furthermore note that running the simulation codes is extremely computationnally intensive since the model consists of the optimisation of about 20 state variables over 100 periods in 600 different states of the world. The power requirement can only be granted by a computing cluster.
 
@@ -34,11 +34,11 @@ Furthermore note that running the simulation codes is extremely computationnally
 
 The folders in this repository are broadly consistent with the steps outlined above:
 
-'0_input_data/' - The several spreadsheets required to run the simulations.
+`0_input_data/` - The several spreadsheets required to run the simulations.
 
-'1_simulation/' - Code for estimating robust cost-benefit and cost-effective pathways.
+`1_simulation/` - Code for estimating robust cost-benefit and cost-effective pathways.
 
-'2_results/' - Excel spreadsheets containing the results of the GAMS simulation.
+`2_results/` - Excel spreadsheets containing the results of the GAMS simulation.
 
 
 ## Known issues
@@ -50,13 +50,13 @@ GAMS is a capricious software. Sometimes, with a given set of parameters, a mode
 
 Requirements for using the code in this repo
 
-    You need to have 'GAMS' as well as a 'GAMS' licence too.
+    You need to have `GAMS` as well as a `GAMS` licence too.
 
 ## Basic instruction
 
-First you should download the input data files (folder '0_input_data/') and the simulation GAMS code files (folder '1_simulation/') and put all files in the same folder.
+First you should download the input data files (folder `0_input_data/`) and the simulation GAMS code files (folder `1_simulation/`) and put all files in the same folder.
 
-You may open the file 'Robust_Pathfinder_ncc_parameters_log_600.gpr'
+You may open the file `Robust_Pathfinder_ncc_parameters_log_600.gpr`
 
 cd <yourREPO>
 git clone https://github.com/ClimateImpactLab/carleton_mortality_2022.git
