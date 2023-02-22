@@ -28,12 +28,8 @@ Please note that the programming language used is GAMS (https://www.gams.com/). 
 
 Furthermore note that running the simulation codes is extremely computationnally intensive since the model consists of the optimisation of about 20 state variables over 100 periods in 600 different states of the world. The power requirement can only be granted by a computing cluster.
 
-Please note that the "Projection" step (step 2) is incredibly computationally intensive, as it computes a set of daily Monte Carlo simulations at the scale of 24,378 geospatial "impact regions". This step can only be feasibly calculated on a computing cluster or using cloud computing resources. Similarly, some components of the "Valuation" step (step 3) are computationally intensive to replicate, as they conduct calculations using all Monte Carlo simulation outputs from step 2.
 
-To ensure users can replicate all other stages of the analysis without directly running the most computationally intensive components, we have included key outputs of the projection step and valuation step as .csv files in the data repository associated with this repo, so that the user does not need to re-generate them. More details are provided in README files within the 2_projecton/ and 3_valuation/ folders.
-
-
-Folders
+## Folders
 
 The folders in this repository are broadly consistent with the steps outlined above:
 
@@ -57,7 +53,16 @@ Requirements For Using Code In This Repo
 
     We use conda to manage python environments, so we recommend installing conda if you haven't already done so following these instructions.
 
-Setup Instructions
+## Known issues
+
+    The model requires a high number of substeps to remain stable under high CO2 (because of the ocean carbon cycle). This can be set using the nt argument when calling run_xarray.
+
+    The temperature-driven mode (Tdriven) is extremely sensitive to its forcings: it can be very difficult to make it transition smoothly from historical to projections. This is unavoidable because mathematically it requires the second derivative of T and the first derivative of ERFx as input.
+
+    Unclear whether the my_AR1 class from cls_calib is actually needed.
+
+
+# Setup Instructions
 
     Clone the following repos to a chosen directory, which we'll call yourREPO from now onwards, with the following commands:
 
