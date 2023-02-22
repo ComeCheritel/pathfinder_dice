@@ -64,7 +64,7 @@ This first file performs:
 - the cost-effective robust probabilistic simulations with a constraint limiting warming to 2 degrees,
 - the cost-effective robust probabilistic simulations with a constraint limiting warming to 1.5 degrees,
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 2 degrees,
-- the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees,
+- the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees.
 
 # References
     
