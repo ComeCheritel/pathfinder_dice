@@ -10,7 +10,7 @@ Choses importantes à signaler :
 - description du solver utilisé [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
 - parler de pathfinder ([lien vers le repo](https://github.com/tgasser/Pathfinder) et [le papier](https://gmd.copernicus.org/articles/15/8831/2022/))
 
-Bossy, T., Gasser, T., and Ciais, P.: Pathfinder v1.0.1: a Bayesian-inferred simple carbon–climate model to explore climate change scenarios, Geosci. Model Dev., 15, 8831–8868, https://doi.org/10.5194/gmd-15-8831-2022, 2022. 
+
 
 # Description
 
@@ -47,16 +47,15 @@ The folders in this repository are broadly consistent with the steps outlined ab
 GAMS is a capricious software. Sometimes, with a given set of parameters, a model will be "infeasible", i.e. the feasibility step in the optimisation will not converge (the solver does not find a feasible solution from which to start the optimization). In this case, it may be relevant to exchange the rows of some states of the world with each other in the Excel input files (be careful to exchange the rows identically in the four input files, otherwise you change the underlying distribution of states of the world). More details in the following sections.
 
 
-# Setup Instructions
+# How-to
 
-Setup
 Requirements For Using Code In This Repo
 
-    You need to have GAMS and a GAMS licence to .
+    You need to have GAMS as well as a GAMS licence too.
 
-    We use conda to manage python environments, so we recommend installing conda if you haven't already done so following these instructions.
+## Basic instruction
 
-    Clone the following repos to a chosen directory, which we'll call yourREPO from now onwards, with the following commands:
+
 
 cd <yourREPO>
 git clone https://github.com/ClimateImpactLab/carleton_mortality_2022.git
@@ -96,3 +95,11 @@ export LOG=<yourDATA>/log
 Save and exit. Then, run source ~/.bash_profile to load the changes we just made.
 
     Setup for the whole repo is complete! Please follow the READMEs in each subdirectory to run each part of the analysis. In general, each directory will contain one or more staging files where individual analysis or output producing scripts can be run from in one go. Before running, it is recommended that users review and set the TRUE/FALSE toggles to produce the desired set of outputs. More detail is available in the section READMEs.
+
+# References
+    
+The Pathfinder model is described in Bossy, T., Gasser, T., and Ciais, P.: Pathfinder v1.0.1: a Bayesian-inferred simple carbon–climate model to explore climate change scenarios, Geosci. Model Dev., 15, 8831–8868, https://doi.org/10.5194/gmd-15-8831-2022, 2022. 
+The repository of the code is available ([here](https://github.com/tgasser/Pathfinder).
+
+The GAMS solver used is a non-linear optimization solver named [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
+    
