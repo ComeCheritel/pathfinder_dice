@@ -3,12 +3,12 @@
 Supporting material for Thomas Gasser, Armon Rezai, Côme Cheritel, Artem Baklanov, and Michael Obersteiner, “Robust climate mitigation entails net negative emissions for centuries.”
 
 Choses importantes à signaler : 
-- besoin d'une lcience gams
+- besoin d'une licence gams
 - besoin d'un cluster de calcul (temps de calculs pouvant être très long)
 - ordres des codes
 - Gams capricieux : parfois, il faut commenter et bien choisir le guess de départ qui doit être le plus proche possible de ce qui est utilisé
-- description du solver utilisé (IPOPT)
-- parler de OSCAR (lien vers le repo est le papier
+- description du solver utilisé - CONOPT4 (https://www.gams.com/latest/docs/S_CONOPT4.html)
+- parler de pathfinder ([lien vers le repo est le papier](https://github.com/tgasser/Pathfinder))
 
 # Description
 
@@ -49,7 +49,7 @@ For run instructions on each step of the analysis, refer to the README files loc
 Setup
 Requirements For Using Code In This Repo
 
-    You need to have python, Stata, and R programming capabilities, or at least environments to run code in these languages, on your computer.
+    You need to have GAMS and a GAMS licence to .
 
     We use conda to manage python environments, so we recommend installing conda if you haven't already done so following these instructions.
 
