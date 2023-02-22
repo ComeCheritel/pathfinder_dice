@@ -56,46 +56,15 @@ Requirements for using the code in this repo
 
 First you should download the input data files (folder `0_input_data/`) and the simulation GAMS code files (folder `1_simulation/`) and put all files in the same folder.
 
-You may open the file `Robust_Pathfinder_ncc_parameters_log_600.gpr`
+You may open the GAMS IDE project file `Robust_Pathfinder_ncc_parameters_log_600.gpr` with the GAMS IDE, and open the GAMS file `Robust_Pathfinder_ncc_parameters_log_600.gms`.
 
-cd <yourREPO>
-git clone https://github.com/ClimateImpactLab/carleton_mortality_2022.git
-
-    Install the conda environment included in this repo by running the following commands under the root of this repo:
-
-cd <yourREPO>/carleton_mortality_2022
-conda env create -f mortalityverse.yml
-
-Try activating the environment:
-
-conda activate mortalityverse
-
-Please remember that you will need to activate this environment whenever you run python scripts in this repo, including the pip install -e . commands in the following section.
-
-Also, you need to install Jupyter for the scc calculation code
-
-conda install -c conda-forge jupyterlab
-
-    Download data either from Zenodo or from the QJE Dataverse and unzip it somewhere on your machine with at least 85 GB of space. Let's call this location yourDATA.
-
-    Set up a few environment variables so that all the code runs smoothly.
-
-Append the following lines to your ~/.bash_profile.
-
-First, run:
-
-nano ~/.bash_profile
-
-Then, point the variable DB in the yourDATA dierctory in the downloaded data, and do the same for OUTPUT. Point the REPO variable to yourREPO path used above containing this repo and other repos by adding the following lines to .bash_profile:
-
-export REPO=<yourREPO>
-export DB=<yourDATA>/data
-export OUTPUT=<yourDATA>/output
-export LOG=<yourDATA>/log
-
-Save and exit. Then, run source ~/.bash_profile to load the changes we just made.
-
-    Setup for the whole repo is complete! Please follow the READMEs in each subdirectory to run each part of the analysis. In general, each directory will contain one or more staging files where individual analysis or output producing scripts can be run from in one go. Before running, it is recommended that users review and set the TRUE/FALSE toggles to produce the desired set of outputs. More detail is available in the section READMEs.
+This first file performs:
+- the cost-benefit Monte Carlo simulation,
+- the cost-benefit robust simulation,
+- the cost-effective robust probabilistic simulations with a constraint limiting warming to 2 degrees,
+- the cost-effective robust probabilistic simulations with a constraint limiting warming to 1.5 degrees,
+- the cost-effective Monte Carlo simulation with a constraint limiting warming to 2 degrees,
+- the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees,
 
 # References
     
