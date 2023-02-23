@@ -57,7 +57,7 @@ Requirements for using the code in this repo
 
     You need to have `GAMS` as well as a `GAMS` licence too.
 
-## Basic instruction
+## Basic instructions
 
 First you should download the input data files (folder `0_input_data/`) and the simulation GAMS code files (folder `1_simulation/`) and put all files in the same folder.
 
@@ -88,12 +88,14 @@ Here is a list of the simulations performed:
 
 ## Input data
 
+
 Each simulation requires a set of parameters for each state of the world. 
 Each sets of parameters are distributed over 4 files produced using the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022):
 -
 -
 -
 -
+
 
 # References
     
