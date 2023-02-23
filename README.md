@@ -49,7 +49,7 @@ Similarly, if the initial guess is not close enough to the outcome, the model ma
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
 2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
 3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
-4. rerun the code and wait to see if the new guess results leads to a feasible solution
+4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**.
 
 # How-to
 
@@ -89,11 +89,12 @@ Here is a list of the simulations performed:
 ## Input data
 
 Each simulation requires a set of parameters for each state of the world. Each sets of parameters are distributed over 4 files produced using the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022):
-- `par_v1` denotes the set of parameters of the climate model in each state of the world
-- `ini_2015_v1` denotes the initial value of the state variables for each state of the world
-- `ERFx_for_dice` denotes the exogenous radiative forcing scenario for each state of the world
-- `Eluc_for_dice` denotes the land-use change emissions scenario for each state of the world
+- `par_v1` denotes the set of parameters of the climate model in each state of the world,
+- `ini_2015_v1` denotes the initial value of the state variables for each state of the world,
+- `ERFx_for_dice` denotes the exogenous radiative forcing scenario for each state of the world,
+- `Eluc_for_dice` denotes the land-use change emissions scenario for each state of the world.
 
+Original outputs of the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022) are given by the files `par_v1_original.xlsx`, `ini_2015_v1_original.xlsx`, `ERFx_for_dice.xlsx`and `Eluc_for_dice.xlsx`. Morover, for matters of practicalities, files `ERFx_for_dice.xlsx` and `Eluc_for_dice.xlsx` need to be transposed as files `ERFx_for_dice_2_original.xlsx` and `Eluc_for_dice_2_original.xlsx`. As explained above, GAMS might be a capricious software. In order to obtain a feasible model, some lines of the four models are interchanged (in the same way between the four files) which allows to obtain the files `par_v1.xlsx`, `ini_2015_v1.xlsx`, `ERFx_for_dice_2.xlsx`and `Eluc_for_dice_2.xlsx` that are used as input for the simulation file `Robust_Pathfinder_ncc_parameters_log_600.gms` as well as for the cost-effective probabilistic targets simulations files. Regarding the MonteCarlo simulation files they require again some 
 
 
 # References
