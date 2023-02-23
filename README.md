@@ -121,6 +121,7 @@ Les fichiers correspondant aux simulations cost-effective n'ont pas seulement be
 Par défaut, le fichier de départ est le fichier `results2deg95.gdx`, raison pour laquelle le fichier `Robust_Pathfinder_ncc_parameters_log_600.gms` est le premier à devoir tourner. 
 Selon les résultats de simulation déjà obtenus, il est alors possible de remplacer le fichier `results2deg95.gdx` des deux lignes de commande `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx"` par le fichier `resultsxxx.gdx` correspondant à une simulation dont le résultat est proche de la simulation précédemment bloquée. 
 A titre d'exmple, le fichier de résulats `results05A50.gdx` fournit un bon guess pour estimer la trajectoire optimale avec 33% de chance que la fonte du permafrost reste sous les 40%.
+Une fois le remplacement des lignes de commande fait, nous avons alors `$gdxin resultsxxx.gdx` et `execute_loadpoint "resultsxxx.gdx"`, il est alors possible de relancer le code pour avoir un guess et un résultat pertinents
 
 Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
