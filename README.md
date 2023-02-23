@@ -66,14 +66,21 @@ You may open the GAMS IDE project file `Robust_Pathfinder_ncc_parameters_log_600
 This first file performs:
 - the cost-benefit Monte Carlo simulation,
 - the cost-benefit robust simulation,
-- the cost-effective robust probabilistic simulations with a constraint limiting warming to 2 degrees,
-- the cost-effective robust probabilistic simulations with a constraint limiting warming to 1.5 degrees,
+- the cost-effective robust probabilistic simulations with a constraint limiting warming to 2 degrees with a probability of 95%, 90%, 60%, 50%, 33% and 10%,
+- the cost-effective robust probabilistic simulations with a constraint limiting warming to 1.5 degrees with a probability of 95%, 90%, 60%, 50%, 33% and 10% (Note that the 95%, 90% and 66% trajectories are not achievable),
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 2 degrees,
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees.
 
-Once this simulation has run
+Once these simulations have run, it is possible to run the codes corresponding to the probabilistic targets and the Monte Carlo simulations.
+Here is a list of the simulations performed:
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03.gms` estimates the optimal trajectories to limit the permafrost melt to 30% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (Note that the 95% and 90% trajectories are not achievable)
 
-Une fois que ces simulations ont tourné, il est possible de lancer les codes correspondant aux cibles probabilistiques ainsi que les simulations de Monte Carlo
+
+
+Une fois que ces simulations ont tourné, il est possible de lancer les codes correspondant aux cibles probabilistiques ainsi que les simulations de Monte Carlo.
+Voici la liste des simulation réalisées:
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03.gms` permet d'estimer les trajectoires optimales permettant de limiter la fonte du permafrost à 30% avec une probabilité de 95%, 90%, 60%, 50%, 33% et 10% (Notons que les trajectoires à 95% et 90% ne sont pas atteignables)
+
 
 
 
