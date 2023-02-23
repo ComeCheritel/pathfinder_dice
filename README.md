@@ -27,7 +27,8 @@ This repository includes three different sections:
 
 Please note that the programming language used is `GAMS` (https://www.gams.com/). Since the size of the various models we run far exceeds the 1000 limit, a GAMS licence is required.
 
-Furthermore note that running the simulation codes is extremely computationnally intensive since the model consists of the optimisation of about 20 state variables over 100 periods in 600 different states of the world. The power requirement can only be granted by a computing cluster.
+Furthermore note that running the simulation codes is extremely computationnally intensive since the model consists of the optimisation of about 20 state variables over 100 periods in 600 different states of the world. 
+The power requirement can only be granted by a computing cluster.
 
 
 ## Folders
@@ -43,13 +44,17 @@ The folders in this repository are broadly consistent with the steps outlined ab
 
 ## Known issues
 
-GAMS is a capricious software. Sometimes, with a given set of parameters, a model will be "infeasible", i.e. the feasibility step in the optimisation will not converge (the solver does not find a feasible solution from which to start the optimization). In this case, it may be relevant to exchange the rows of some states of the world with each other in the Excel input files (be careful to exchange the rows identically in the four input files, otherwise you change the underlying distribution of states of the world). More details in the following sections.
+GAMS is a capricious software. Sometimes, with a given set of parameters, a model will be "infeasible", i.e. the feasibility step in the optimisation will not converge (the solver does not find a feasible solution from which to start the optimization). 
+In this case, it may be relevant to exchange the rows of some states of the world with each other in the Excel input files (be careful to exchange the rows identically in the four input files, otherwise you change the underlying distribution of states of the world). 
+More details are given in the following sections.
 
-Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
+Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. 
+This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. 
+In this case, the easiest thing to do is:
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
 2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
 3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
-4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**.
+4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**
 
 # How-to
 
@@ -72,7 +77,8 @@ This first file performs:
 - the cost-effective Monte Carlo simulation with a constraint limiting warming to 1.5 degrees.
 
 
-Once these simulations have run, it is possible to run the codes corresponding to the probabilistic targets and the Monte Carlo simulations. Note that with the `GAMS IDE` up to 5 codes can be run at the same time, which saves considerable computational time, which is why we have built separate files for each probabilistic simulation.
+Once these simulations have run, it is possible to run the codes corresponding to the probabilistic targets and the Monte Carlo simulations. 
+Note that with the `GAMS IDE` up to 5 codes can be run at the same time, which saves considerable computational time, which is why we have built separate files for each probabilistic simulation.
 Here is a list of the simulations performed:
 - `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03.gms` estimates the optimal trajectories to limit the permafrost thawing to 30% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% and 90% trajectories are not achievable)
 - `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04.gms` estimates the optimal trajectories to limit the permafrost thawing to 40% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% trajectory is not achievable)
@@ -95,15 +101,26 @@ Each simulation requires a set of parameters for each state of the world. Each s
 - `ERFx_for_dice` denotes the exogenous radiative forcing scenario for each state of the world,
 - `Eluc_for_dice` denotes the land-use change emissions scenario for each state of the world.
 
-Original outputs of the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022) are given by the files `par_v1_original.xlsx`, `ini_2015_v1_original.xlsx`, `ERFx_for_dice.xlsx`and `Eluc_for_dice.xlsx`. Morover, for matters of practicalities, files `ERFx_for_dice.xlsx` and `Eluc_for_dice.xlsx` need to be transposed as files `ERFx_for_dice_2_original.xlsx` and `Eluc_for_dice_2_original.xlsx`. As explained above, GAMS might be a capricious software. In order to obtain a feasible model, some lines of the four models are interchanged (in the same way between the four files) which allows to obtain the files `par_v1.xlsx`, `ini_2015_v1.xlsx`, `ERFx_for_dice_2.xlsx`and `Eluc_for_dice_2.xlsx` that are used as input for the simulation file `Robust_Pathfinder_ncc_parameters_log_600.gms` as well as for the cost-effective probabilistic targets simulations files. Regarding the Monte Carlo simulation files they require again some interchanging of lines to obtain a feasible model, so the input files are:
+Original outputs of the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022) are given by the files `par_v1_original.xlsx`, `ini_2015_v1_original.xlsx`, `ERFx_for_dice.xlsx`and `Eluc_for_dice.xlsx`. 
+Morover, for matters of practicalities, files `ERFx_for_dice.xlsx` and `Eluc_for_dice.xlsx` need to be transposed as files `ERFx_for_dice_2_original.xlsx` and `Eluc_for_dice_2_original.xlsx`. 
+As explained above, GAMS might be a capricious software. 
+In order to obtain a feasible model, some lines of the four models are interchanged (in the same way between the four files) which allows to obtain the files `par_v1.xlsx`, `ini_2015_v1.xlsx`, `ERFx_for_dice_2.xlsx`and `Eluc_for_dice_2.xlsx` that are used as input for the simulation file `Robust_Pathfinder_ncc_parameters_log_600.gms` as well as for the cost-effective probabilistic targets simulations files. 
+Regarding the Monte Carlo simulation files they require again some interchanging of lines to obtain a feasible model, so the input files are:
 -  `par_v1_03A_MC.xlsx`, `ini_2015_v1_03A_MC.xlsx`, `ERFx_for_dice_2_03A_MC.xlsx` and `Eluc_for_dice_2_03A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03_MC.gms`,
 -  `par_v1_04A_MC.xlsx`, `ini_2015_v1_04A_MC.xlsx`, `ERFx_for_dice_2_04A_MC.xlsx` and `Eluc_for_dice_2_04A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04_MC.gms`,
 -  `par_v1_05A_MC.xlsx`, `ini_2015_v1_05A_MC.xlsx`, `ERFx_for_dice_2_05A_MC.xlsx` and `Eluc_for_dice_2_05A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05_MC.gms`,
--  `par_v1_02pH_MC.xlsx`, `ini_2015_v1_02pH_MC.xlsx`, `ERFx_for_dice_2_02pH_MC.xlsx` and `Eluc_for_dice_2_02pH_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms`,
+- `par_v1_02pH_MC.xlsx`, `ini_2015_v1_02pH_MC.xlsx`, `ERFx_for_dice_2_02pH_MC.xlsx` and `Eluc_for_dice_2_02pH_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms`,
 -  `par_v1_50SLR_dot_MC.xlsx`, `ini_2015_v1_50SLR_dot_MC.xlsx`, `ERFx_for_dice_2_50SLR_dot_MC.xlsx` and `Eluc_for_dice_2_50SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms`,
 -  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx` and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`,
 
-Par ailleurs, comme expliqué plus haut, il est important pour GAMS de partir d'un bon guess de départ pour obtenir une solution faisable. Or, il est possible qu'entre deux cibles probabilistes, l'écart soit trop important. Dans ce cas, la faisabilité du modèle de converge pas et il n'est pas possible d'obtenir un résultat pertinent (le fichier de résultats est identique au fichier de résultats de la cible probabilistique précédente). Il faut alors interrompre la simulation dans le but de la relancer avec meilleur guess de départ. Pour ne pas perdre de temps de calcul (et ne pas se retrouver dans la même situation), il faut commenter les simulations des cibles déjà réaliser au moyen des lignes de commandes `$ontext` et `$offtext`. Les fichiers correspondant aux simulations cost-effective n'ont pas seulement besoin des quatre fichiers `.xlsx` spécifiant les paramèters du modèle comme input, mais ont aussi besoin d'une première réalisation d'un modèle cost-effectif comme guess de départ. Par défaut, le fichier de départ est le fichier `results2deg95.gdx`, raison pour laquelle le fichier `Robust_Pathfinder_ncc_parameters_log_600.gms` est le premier à devoir tourn. Selon les résultats de simulation déjà obtenus, il est alors possible de remplacer le fichier `results2deg95.gdx` des deux lignes de commande `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx"` par le fichier `resultsxxx.gdx` correspondant à une simulation dont le résultat est prohce de la simulation précédememtn bloquée
+Par ailleurs, comme expliqué plus haut, il est important pour GAMS de partir d'un bon guess de départ pour obtenir une solution faisable. 
+Or, il est possible qu'entre deux cibles probabilistes, l'écart soit trop important. 
+Dans ce cas, la faisabilité du modèle de converge pas et il n'est pas possible d'obtenir un résultat pertinent (le fichier de résultats est identique au fichier de résultats de la cible probabilistique précédente). 
+Il faut alors interrompre la simulation dans le but de la relancer avec meilleur guess de départ. Pour ne pas perdre de temps de calcul (et ne pas se retrouver dans la même situation), il faut commenter les simulations des cibles déjà réaliser au moyen des lignes de commandes `$ontext` et `$offtext`. 
+Les fichiers correspondant aux simulations cost-effective n'ont pas seulement besoin des quatre fichiers `.xlsx` spécifiant les paramèters du modèle comme input, mais ont aussi besoin d'une première réalisation d'un modèle cost-effectif comme guess de départ. 
+Par défaut, le fichier de départ est le fichier `results2deg95.gdx`, raison pour laquelle le fichier `Robust_Pathfinder_ncc_parameters_log_600.gms` est le premier à devoir tourner. 
+Selon les résultats de simulation déjà obtenus, il est alors possible de remplacer le fichier `results2deg95.gdx` des deux lignes de commande `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx"` par le fichier `resultsxxx.gdx` correspondant à une simulation dont le résultat est proche de la simulation précédemment bloquée. 
+A titre d'exmple, le fichier de résulats `results05A50.gdx` fournit un bon guess pour estimer la trajectoire optimale avec 33% de chance que la fonte du permafrost reste sous les 40%.
 
 Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
