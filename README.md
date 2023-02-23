@@ -53,7 +53,7 @@ This is particularly the case with some cost-effective simulations when switchin
 In this case, the easiest thing to do is:
 1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
 2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
-3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
+3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx" ;` code lines
 4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**
 
 # How-to
@@ -111,23 +111,17 @@ Regarding the Monte Carlo simulation files they require again some interchanging
 -  `par_v1_05A_MC.xlsx`, `ini_2015_v1_05A_MC.xlsx`, `ERFx_for_dice_2_05A_MC.xlsx` and `Eluc_for_dice_2_05A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05_MC.gms`,
 - `par_v1_02pH_MC.xlsx`, `ini_2015_v1_02pH_MC.xlsx`, `ERFx_for_dice_2_02pH_MC.xlsx` and `Eluc_for_dice_2_02pH_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms`,
 -  `par_v1_50SLR_dot_MC.xlsx`, `ini_2015_v1_50SLR_dot_MC.xlsx`, `ERFx_for_dice_2_50SLR_dot_MC.xlsx` and `Eluc_for_dice_2_50SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms`,
--  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx` and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`,
+-  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx` and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`.
 
-Par ailleurs, comme expliqué plus haut, il est important pour GAMS de partir d'un bon guess de départ pour obtenir une solution faisable. 
-Or, il est possible qu'entre deux cibles probabilistes, l'écart soit trop important. 
-Dans ce cas, la faisabilité du modèle de converge pas et il n'est pas possible d'obtenir un résultat pertinent (le fichier de résultats est identique au fichier de résultats de la cible probabilistique précédente). 
-Il faut alors interrompre la simulation dans le but de la relancer avec meilleur guess de départ. Pour ne pas perdre de temps de calcul (et ne pas se retrouver dans la même situation), il faut commenter les simulations des cibles déjà réaliser au moyen des lignes de commandes `$ontext` et `$offtext`. 
-Les fichiers correspondant aux simulations cost-effective n'ont pas seulement besoin des quatre fichiers `.xlsx` spécifiant les paramèters du modèle comme input, mais ont aussi besoin d'une première réalisation d'un modèle cost-effectif comme guess de départ. 
-Par défaut, le fichier de départ est le fichier `results2deg95.gdx`, raison pour laquelle le fichier `Robust_Pathfinder_ncc_parameters_log_600.gms` est le premier à devoir tourner. 
-Selon les résultats de simulation déjà obtenus, il est alors possible de remplacer le fichier `results2deg95.gdx` des deux lignes de commande `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx"` par le fichier `resultsxxx.gdx` correspondant à une simulation dont le résultat est proche de la simulation précédemment bloquée. 
-A titre d'exmple, le fichier de résulats `results05A50.gdx` fournit un bon guess pour estimer la trajectoire optimale avec 33% de chance que la fonte du permafrost reste sous les 40%.
-Une fois le remplacement des lignes de commande fait, nous avons alors `$gdxin resultsxxx.gdx` et `execute_loadpoint "resultsxxx.gdx"`, il est alors possible de relancer le code pour avoir un guess et un résultat pertinents
-
-Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
-1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
-2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
-3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
-4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**.
+Furthermore, as explained above, it is important for GAMS to start with a good guess to obtain a feasible solution. 
+However, it is possible that the gap between two probabilistic targets is too large for a probabilistic target results to be a good guess for the next probabilistic target. 
+In this case, the feasibility of the model does not converge and it is not possible to obtain a relevant result (or else the result file is identical to the result file of the previous probabilistic target). 
+The simulation must then be interrupted in order to restart it with a better starting guess. In order not to lose calculation time (and not to find oneself in the same situation), it is necessary to comment on the simulations of the targets already carried out by means of the command lines `$ontext` and `$offtext`. 
+The files corresponding to the cost-effective simulations not only need the four `.xlsx` files specifying the model parameters as input, but also need a first realisation of a cost-effective model as starting guess. 
+By default, the starting file is the `results2deg95.gdx` file, which is why the `Robust_Pathfinder_ncc_parameters_log_600.gms` file is the first to be run. 
+Depending on the simulation results already obtained, it is then possible to replace the `results2deg95.gdx` file of the two command lines `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx" ;` with the `resultsxxx.gdx` file corresponding to a simulation whose result is close to the previously blocked simulation. 
+For instance, the results file `results05A50.gdx` provides a good guess for estimating the optimal trajectory with a 33% chance that permafrost thawing will remain below 40%.
+Once the replacement of the command lines is done, we have `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"`, it is then possible to rerun the code to get a relevant guess and result.
 
 
 # References
