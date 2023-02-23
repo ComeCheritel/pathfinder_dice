@@ -73,13 +73,18 @@ This first file performs:
 
 Once these simulations have run, it is possible to run the codes corresponding to the probabilistic targets and the Monte Carlo simulations.
 Here is a list of the simulations performed:
-- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03.gms` estimates the optimal trajectories to limit the permafrost melt to 30% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% and 90% trajectories are not achievable)
-- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04.gms` estimates the optimal trajectories to limit the permafrost melt to 40% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% trajectory is not achievable)
-- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05.gms` estimates the optimal trajectories to limit the permafrost melt to 50% with a probability of 95%, 90%, 60%, 50%, 33% and 10%
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03.gms` estimates the optimal trajectories to limit the permafrost thawing to 30% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% and 90% trajectories are not achievable)
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04.gms` estimates the optimal trajectories to limit the permafrost thawing to 40% with a probability of 95%, 90%, 60%, 50%, 33% and 10% (note that the 95% trajectory is not achievable)
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05.gms` estimates the optimal trajectories to limit the permafrost thawing to 50% with a probability of 95%, 90%, 60%, 50%, 33% and 10%
 - `Robust_Pathfinder_ncc_parameters_log_600_pH_02.gms` estimates the optimal trajectories to limit the ocean acidification to 0.2 pH points compared to the preindustrial era equilibrium with a probability of 95%, 90%, 60%, 50%, 33% and 10%
 - `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50.gms` estimates the optimal trajectories to limit the sea-level rise speed to 5.0 mm.yr-1 with a probability of 95%, 90%, 60%, 50%, 33% and 10%
 - `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75.gms` estimates the optimal trajectories to limit the sea-level rise speed to 7.5 mm.yr-1 with a probability of 95%, 90%, 60%, 50%, 33% and 10%
-
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03_MC.gms` estimates the optimal Monte Carlo trajectories limiting the permafrost thawing to 30%.
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04_MC.gms` estimates the optimal Monte Carlo trajectories limiting the permafrost thawing to 40%.
+- `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05_MC.gms` estimates the optimal Monte Carlo trajectories limiting the permafrost thawing to 50%.
+- `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms` estimates the optimal Monte Carlo trajectories limiting the ocean acidification to 0.2 pH points compared to the preindustrial era equilibrium.
+- `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms` estimates the optimal Monte Carlo trajectories limiting the sea-level rise speed to 5.0 mm.yr-1.
+- `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms` estimates the optimal Monte Carlo trajectories limiting the sea-level rise speed to 7.5 mm.yr-1.
 
 
 # References
