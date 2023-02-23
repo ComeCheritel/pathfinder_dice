@@ -95,12 +95,12 @@ Each simulation requires a set of parameters for each state of the world. Each s
 - `Eluc_for_dice` denotes the land-use change emissions scenario for each state of the world.
 
 Original outputs of the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022) are given by the files `par_v1_original.xlsx`, `ini_2015_v1_original.xlsx`, `ERFx_for_dice.xlsx`and `Eluc_for_dice.xlsx`. Morover, for matters of practicalities, files `ERFx_for_dice.xlsx` and `Eluc_for_dice.xlsx` need to be transposed as files `ERFx_for_dice_2_original.xlsx` and `Eluc_for_dice_2_original.xlsx`. As explained above, GAMS might be a capricious software. In order to obtain a feasible model, some lines of the four models are interchanged (in the same way between the four files) which allows to obtain the files `par_v1.xlsx`, `ini_2015_v1.xlsx`, `ERFx_for_dice_2.xlsx`and `Eluc_for_dice_2.xlsx` that are used as input for the simulation file `Robust_Pathfinder_ncc_parameters_log_600.gms` as well as for the cost-effective probabilistic targets simulations files. Regarding the Monte Carlo simulation files they require again some interchanging of lines to obtain a feasible model, so the input files are:
--  `par_v1_03A_MC.xlsx`, `ini_2015_v1_03A_MC.xlsx`, `ERFx_for_dice_2_03A_MC.xlsx`and `Eluc_for_dice_2_03A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03_MC.gms`,
--  `par_v1_04A_MC.xlsx`, `ini_2015_v1_04A_MC.xlsx`, `ERFx_for_dice_2_04A_MC.xlsx`and `Eluc_for_dice_2_04A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04_MC.gms`,
--  `par_v1_05A_MC.xlsx`, `ini_2015_v1_05A_MC.xlsx`, `ERFx_for_dice_2_05A_MC.xlsx`and `Eluc_for_dice_2_05A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05_MC.gms`,
--  `par_v1_02pH_MC.xlsx`, `ini_2015_v1_02pH_MC.xlsx`, `ERFx_for_dice_2_02pH_MC.xlsx`and `Eluc_for_dice_2_02pH_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms`,
--  `par_v1_50SLR_dot_MC.xlsx`, `ini_2015_v1_50SLR_dot_MC.xlsx`, `ERFx_for_dice_2_50SLR_dot_MC.xlsx`and `Eluc_for_dice_2_50SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms`,
--  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx`and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`,
+-  `par_v1_03A_MC.xlsx`, `ini_2015_v1_03A_MC.xlsx`, `ERFx_for_dice_2_03A_MC.xlsx` and `Eluc_for_dice_2_03A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_03_MC.gms`,
+-  `par_v1_04A_MC.xlsx`, `ini_2015_v1_04A_MC.xlsx`, `ERFx_for_dice_2_04A_MC.xlsx` and `Eluc_for_dice_2_04A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_04_MC.gms`,
+-  `par_v1_05A_MC.xlsx`, `ini_2015_v1_05A_MC.xlsx`, `ERFx_for_dice_2_05A_MC.xlsx` and `Eluc_for_dice_2_05A_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_permafrost_05_MC.gms`,
+-  `par_v1_02pH_MC.xlsx`, `ini_2015_v1_02pH_MC.xlsx`, `ERFx_for_dice_2_02pH_MC.xlsx` and `Eluc_for_dice_2_02pH_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_pH_02_MC.gms`,
+-  `par_v1_50SLR_dot_MC.xlsx`, `ini_2015_v1_50SLR_dot_MC.xlsx`, `ERFx_for_dice_2_50SLR_dot_MC.xlsx` and `Eluc_for_dice_2_50SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms`,
+-  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx` and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`,
 
 
 # References
