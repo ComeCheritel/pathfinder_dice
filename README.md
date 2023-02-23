@@ -89,10 +89,10 @@ Here is a list of the simulations performed:
 ## Input data
 
 Each simulation requires a set of parameters for each state of the world. Each sets of parameters are distributed over 4 files produced using the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2022):
-- `par_v1`
-- coucou
-- coucou
-- coucou
+- `par_v1` denotes the set of parameters of the climate model in each state of the world
+- `ini_2015_v1` denotes the initial value of the state variables for each state of the world
+- `ERFx_for_dice` denotes the exogenous radiative forcing scenario for each state of the world
+- `Eluc_for_dice` denotes the land-use change emissions scenario for each state of the world
 
 
 
