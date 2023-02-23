@@ -121,7 +121,7 @@ The files corresponding to the cost-effective simulations not only need the four
 By default, the starting file is the `results2deg95.gdx` file, which is why the `Robust_Pathfinder_ncc_parameters_log_600.gms` file is the first to be run. 
 Depending on the simulation results already obtained, it is then possible to replace the `results2deg95.gdx` file of the two command lines `$gdxin results2deg95.gdx` and `execute_loadpoint "results2deg95.gdx" ;` with the `resultsxxx.gdx` file corresponding to a simulation whose result is close to the previously blocked simulation. 
 For instance, the results file `results05A50.gdx` provides a good guess for estimating the optimal trajectory with a 33% chance that permafrost thawing will remain below 40%.
-Once the replacement of the command lines is done, we have `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"`, it is then possible to rerun the code to get a relevant guess and result.
+Once the replacement of the command lines is done, we have `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx" ;`, it is then possible to rerun the code to get a relevant guess and result.
 
 
 # References
