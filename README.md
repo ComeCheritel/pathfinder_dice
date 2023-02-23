@@ -73,6 +73,10 @@ This first file performs:
 
 Once this simulation has run
 
+Une fois que ces simulations ont tourné, il est possible de lancer les codes correspondant aux cibles probabilistiques ainsi que les simulations de Monte Carlo
+
+
+
 # References
     
 The Pathfinder model is described in Bossy, T., Gasser, T., and Ciais, P.: Pathfinder v1.0.1: a Bayesian-inferred simple carbon–climate model to explore climate change scenarios, Geosci. Model Dev., 15, 8831–8868, https://doi.org/10.5194/gmd-15-8831-2022, 2022. 
