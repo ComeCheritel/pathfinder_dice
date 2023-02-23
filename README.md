@@ -102,6 +102,14 @@ Original outputs of the [Pathfinder model](https://doi.org/10.5194/gmd-15-8831-2
 -  `par_v1_50SLR_dot_MC.xlsx`, `ini_2015_v1_50SLR_dot_MC.xlsx`, `ERFx_for_dice_2_50SLR_dot_MC.xlsx` and `Eluc_for_dice_2_50SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_50_MC.gms`,
 -  `par_v1_75SLR_dot_MC.xlsx`, `ini_2015_v1_75SLR_dot_MC.xlsx`, `ERFx_for_dice_2_75SLR_dot_MC.xlsx` and `Eluc_for_dice_2_75SLR_dot_MC.xlsx` for the simulation file `Robust_Pathfinder_ncc_parameters_log_600_SLR_dot_75_MC.gms`,
 
+Par ailleurs, comme expliqué plus haut, il est important pour GAMS de partir d'un bon guess de départ pour obtenir une solution faisable. Or, il est possible qu'entre deux cibles probabilistes, l'écart soit trop important. Dans ce cas, la faisabilité du modèle de converge pas et il n'est pas possible d'obtenir un résultat pertinent (le fichier de résultats est identique au fichier de résultats de la cible probabilistique précédente). Il faut alors interrompre la simulation dans le but de la relancer avec meilleur guess de départ. Pour ne pas perdre de temps de calcul (et ne pas se retrouver dans la même situation), il faut commenter les simulations des cibles déjà réaliser au moyen des lignes de commandes `$ontext` et `$offtext`. Les fichiers correspondant aux simulations cost-effective n'ont pas seulement besoindes quatre fichiers ';xlsx spécifiant les paramèters du modèle comme input, il son t aussi besoind 'une première réalisation d'un modèle cost effectif 
+
+Similarly, if the initial guess is not close enough to the outcome, the model may not be able to find a feasible solution. This is particularly the case with some cost-effective simulations when switching from one probabilistic target to another. In this case, the easiest thing to do is:
+1. to determine which simulation whose results have already been obtained appears to be the closest to the one sought
+2. comment out model simulations with probabilistic targets preceding the target under consideration (i.e. the one whose result has already been released) using the `$ontext` and `$offtext` command lines
+3. write the `resultsxxx.gdx` file corresponding to the simulation result selected in **1.** to the `$gdxin resultsxxx.gdx` and `execute_loadpoint "resultsxxx.gdx"` code lines
+4. rerun the code and wait to see if the new guess results leads to a feasible solution. If the solution is not feasible, select another simulation result file close to the one sought and go back to step **3.**.
+
 
 # References
     
