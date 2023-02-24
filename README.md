@@ -2,15 +2,6 @@
 
 Supporting material for Thomas Gasser, Armon Rezai, Côme Cheritel, Artem Baklanov, and Michael Obersteiner, “Robust climate mitigation entails net negative emissions for centuries.”
 
-Choses importantes à signaler : 
-- besoin d'une licence gams
-- besoin d'un cluster de calcul (temps de calculs pouvant être très long)
-- ordres des codes
-- Gams capricieux : parfois, il faut commenter et bien choisir le guess de départ qui doit être le plus proche possible de ce qui est utilisé
-- description du solver utilisé [CONOPT4](https://www.gams.com/latest/docs/S_CONOPT4.html)
-- parler de pathfinder ([lien vers le repo](https://github.com/tgasser/Pathfinder) et [le papier](https://gmd.copernicus.org/articles/15/8831/2022/))
-
-
 # Description
 
 
