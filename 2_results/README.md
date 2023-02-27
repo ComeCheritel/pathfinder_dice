@@ -4,6 +4,7 @@ In order to preserve the anonymity of the reviewers as well as the confidentiali
 
 # Licence
 
+Data in this folder of the repository is governed by the CC-BY-4.0 licence
 
 # Description
 
