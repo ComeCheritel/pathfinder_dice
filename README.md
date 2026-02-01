@@ -1,4 +1,4 @@
-# Robust climate mitigation entails net negative emissions for centuries
+# Negative emissions to mitigate Earth system risks
 
 Supporting material for Thomas Gasser, Armon Rezai, Côme Cheritel, Artem Baklanov, and Michael Obersteiner, “Robust climate mitigation entails net negative emissions for centuries.”
 
