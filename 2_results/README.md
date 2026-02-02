@@ -1,6 +1,6 @@
 # How to get the results?
 
-The results are freely available on [Zenodo](https://zenodo.org/), [at the following link]()https://doi.org/10.5281/zenodo.18461481).
+The results are freely available on [Zenodo](https://zenodo.org/), [at the following link](https://doi.org/10.5281/zenodo.18461481).
 
 # Licence
 
