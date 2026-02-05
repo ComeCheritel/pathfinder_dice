@@ -7,6 +7,7 @@ As a counterpart to the access to the source code and rights to copy, modify and
 
 Data in folder `2_results` is governed by the CC-BY-4.0 licence, thus licensees may copy, distribute, display, perform and make derivative works and remixes based on it only if they give the authors the credit citing their work.
 
+An archive of the repository (copy of release v1.0) is available on [Zenodo](https://zenodo.org/) ((https://doi.org/10.5281/zenodo.18491528)[https://doi.org/10.5281/zenodo.18491528])
 
 # Description
 
@@ -18,7 +19,7 @@ This repository includes the elements to reproduce the results presented in Gass
 This repository includes three different sections:
 1. **Input data** from the Pathfinder model
 2. **Codes** for the different robust simulation models whose results are presented
-3. **Results tables** in excel spreadsheet format freely available on [Zenodo](https://zenodo.org/), [at the following link](https://doi.org/10.5281/zenodo.18461481).
+3. **Results tables** in excel spreadsheet format freely available on [Zenodo](https://zenodo.org/), ([https://doi.org/10.5281/zenodo.18461480](https://doi.org/10.5281/zenodo.18461480)).
 
 ## User suitability
 
